@@ -1,0 +1,5 @@
+<div class="jumbotron">
+  <h2>ID1019 CHAT</h2>
+  <p class="lead">Follow the link to the chat</p>
+  <a href="/chat">Go to chat -></a>
+</div>
