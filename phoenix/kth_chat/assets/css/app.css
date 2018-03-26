@@ -1,1 +1,28 @@
 /* This file is for your main application css. */
+div.button-div{
+  background-color: #7AF;
+  border-radius: 3px; /* rounded corners */
+  border: 2px solid #7AF; /* rounded corners */
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.button-div a span{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+div.button-div:hover{
+  background-color: #9CF;
+  border: 2px solid #9CF;
+}
+div.button-div h5{
+  color: #004;
+}
+
+#msg-list {
+  list-style-type: none;
+}

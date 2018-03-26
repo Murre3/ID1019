@@ -5,6 +5,8 @@ let socket = new Socket("/socket", {params: {token: window.userToken}});
 let list = document.getElementById('msg-list')
 let name = document.getElementById('name')
 let message = document.getElementById('msg')
+let clearm = document.getElementById('clrmsg')
+let clearch = document.getElementById('clrchat')
 
 socket.connect()
 
@@ -30,8 +32,22 @@ message.addEventListener('keypress', function(event){
 channel.on('shout', function(payload) {
     let li = document.createElement("li")
     let name = payload.name || 'guest'
-    li.innerHTML = '<b>' + name + '</b>: ' + payload.message;
+    li.innerHTML = '<b>' + name + '</b>: ' + payload.message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     list.appendChild(li);
+})
+
+
+// Clear the message box
+clearm.addEventListener("click", function(){
+  message.value = '';
+  message.focus();
+});
+
+// Clear the chat
+clearch.addEventListener("click", function(){
+  while(list.firstChild){
+    list.removeChild(list.firstChild);
+  }
 })
 
 export default socket
